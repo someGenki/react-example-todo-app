@@ -1,6 +1,22 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+## TODO App React实现 说明
+纯React + CSS modules + React Hooks，没有Redux，React-router，class Api
+
+来自 [【完整版】Vue 3.0 实战，开发基于 Composition API 的 Todo Web App] (https://www.bilibili.com/video/BV1wy4y1k7Lr)
+## React好在哪
+
+all in js、自由&灵活、概念相对少、方便测试
+
+函数组件入口是 props，出口是 html，
+
+jsx遇到`{}`解析为JS代码，遇到成对的 `<>` 符号内部解析为 HTML
+
+更新view的方法只有setState和useState的方法或者props变化
+
+
 
 ## Available Scripts
 

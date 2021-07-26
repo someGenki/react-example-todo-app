@@ -1,0 +1,145 @@
+.todo_container {
+    width: 450px;
+    padding: 14px 28px;
+    position: absolute;
+    border-radius: 24px;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.15);
+    background-color: rgb(245, 246, 252); /* 淡紫灰色*/
+}
+
+.todo_container > h1 {
+    margin: 16px 0;
+    font-size: 28px;
+    color: #414873;
+}
+
+.todo_add {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.todo_add input {
+    width: 100%;
+    height: 46px;
+    padding: 0 16px;
+
+    border: none;
+    outline: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.06);
+    border-radius: 40px;
+
+    font-size: 16px;
+    color: #626262;
+}
+
+.todo_add button {
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    outline: none;
+    border-radius: 50%;
+
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(#c0a5f3, #7f95f7);
+}
+
+.todo_filters {
+    display: flex;
+    margin: 24px 2px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(218, 215, 215);
+
+    color: #c0c2ce;
+    font-size: 14px;
+}
+
+.todo_filters .todo_filter {
+    margin-right: 14px;
+    transition: .6s;
+    cursor: pointer;
+}
+
+.todo_filters .todo_filter.active {
+    color: #6b729c;
+    transform: scale(1.2);
+}
+
+.todo_list {
+    display: grid;
+    row-gap: 14px;
+    max-height: 250px;
+    overflow: auto;
+}
+
+.todo_item {
+    padding: 16px;
+    border-radius: 8px;
+    color: #626262;
+    background-color: white;
+}
+
+.todo_item label {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.todo_item label.completed {
+    font-style: italic;
+    text-decoration: line-through;
+}
+
+.todo_item label span.check_button {
+    position: absolute;
+    top: 0;
+}
+
+.todo_item label span.check_button::before,
+.todo_item label span.check_button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
+
+/* 展示外圈细紫色的border */
+.todo_item label span.check_button::before {
+    border: 1px solid #b382f9;
+}
+
+/* 展示内圈实心圆 主要就是缩小 */
+.todo_item label span.check_button::after {
+    transition: 0.4s;
+    background: #b382f9;
+    transform: translate(1px, 1px) scale(0.8);
+    opacity: 0;
+}
+
+/* 默认隐藏输入框 */
+.todo_item input {
+    margin-right: 16px;
+    opacity: 0;
+}
+
+/* 用兄弟选择器，让复选框选中后改变旁边的span的after，让他显示 */
+.todo_item input:checked + span.check_button::after {
+    opacity: 1;
+}
+
+.plus {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* 生成横着的线和竖着的线:配合size来控制大小 */
+    background: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+    background-size: 50% 2px, 2px 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
