@@ -1,8 +1,16 @@
 import React, {useState} from 'react';
 import styles from './todo.module.css';
+import {TodoItem} from "./todo";
 
-export default function TodoAdd(props) {
-  const [todoContent, setTodoContent] = useState('')
+interface TodoAddProps {
+  tid: number,
+  add: (item: TodoItem) => void
+  completed?: boolean,
+  content?: string
+}
+
+export default function TodoAdd(props: TodoAddProps) {
+  const [todoContent, setTodoContent] = useState<string>('')
 
   const addTodo = () => {
     props.add({id: props.tid, content: todoContent})

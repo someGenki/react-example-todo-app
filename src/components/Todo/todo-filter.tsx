@@ -1,7 +1,12 @@
 import React from 'react';
 import styles from './todo.module.css';
 
-export default function TodoFilter(props) {
+interface TodoFilterProps {
+  change: (id: string) => void,
+  selected?: string
+}
+
+export default function TodoFilter(props: TodoFilterProps) {
   const filters = [
     {label: '全部', value: 'all'},
     {label: '已完成', value: 'done'},

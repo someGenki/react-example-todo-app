@@ -16,6 +16,8 @@ jsx遇到`{}`解析为JS代码，遇到成对的 `<>` 符号内部解析为 HTML
 
 更新view的方法只有setState和useState的方法或者props变化
 
+## typescript支持
+http://www.html.cn/create-react-app/docs/adding-typescript/
 
 
 ## Available Scripts
